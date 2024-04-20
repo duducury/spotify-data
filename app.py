@@ -11,6 +11,15 @@ import revenue_analysis
 #Paga content
 def home_page(): 
     st.title('Welcome to the Spotify Data Analysis Dashboard!')
+    st.markdown('---') 
+ # Introduction text
+    st.markdown("""
+        Our main motivation for this project is to analyze data from one of the leading streaming music platforms: Spotify. 
+        We aim to uncover insights into artist earnings, track the popular artists across different regions, and explore how these dynamics influence music trends and preferences worldwide.
+    """)
+    
+
+
     df = pd.read_csv('https://raw.githubusercontent.com/duducury/spotify-data/main/top5_artists_by_streams.csv')
     
     # raw data Checkbox
