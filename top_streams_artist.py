@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def show_top_artists():
-    st.title('Spotify Top Streams Artists by Region and Globally')
+    st.title('Spotify Top 5 Streams Artists by Region and Globally')
 
     # Load the dataset
     df = pd.read_csv('https://raw.githubusercontent.com/duducury/spotify-data/main/top5_artists_by_streams.csv')
@@ -45,5 +45,4 @@ def show_top_artists():
         st.subheader('Raw data')
         st.write(df_sorted)
 
-# Call the function
 show_top_artists()
