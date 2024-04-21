@@ -13,7 +13,7 @@ def show_page():
         fig = px.choropleth(aggregated_data, locations='region', locationmode='country names',
                             color='streams', hover_data=['region', 'streams'],
                             title=f'Number of Streams by Region in {year}',
-                            color_continuous_scale='Greens', range_color=(0, 6e9))
+                            color_continuous_scale='Greens', range_color=(0, 8e9))
         fig.update_layout(geo=dict(showframe=False, showcoastlines=True))
         return fig
 
