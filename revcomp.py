@@ -31,8 +31,8 @@ def show_page():
 
         fig, ax = plt.subplots()
         ax.barh(platforms, revenue_data)
-        plt.xlabel('Streaming Platform')
-        plt.ylabel('Revenue')
+        plt.ylabel('Streaming Platform')
+        plt.xlabel('Royalities')
         plt.title('Streaming Revenue for {} in {}'.format(artist, year))
 
         plt.xticks(rotation=45, ha='right')
