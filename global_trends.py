@@ -9,11 +9,12 @@ def show_page():
     def choropleth_map(year):
         filtered_df = df[df['year'] == year]
         aggregated_data = filtered_df.groupby('region', as_index=False).agg({'streams': 'sum'})
+        blue_scale = ['rgba(173, 216, 230, 1)', 'rgba(0, 0, 255, 1)']
 
         fig = px.choropleth(aggregated_data, locations='region', locationmode='country names',
                             color='streams', hover_data=['region', 'streams'],
                             title=f'Number of Streams by Region in {year}',
-                            color_continuous_scale='Greens', range_color=(0, 8e9))
+                            color_continuous_scale= blue_scale, range_color=(0, 8e9))
         fig.update_layout(geo=dict(showframe=False, showcoastlines=True))
         return fig
 
