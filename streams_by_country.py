@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def show_page():
-    st.title('Streams by Country')
+    st.title('Compare Countries by Streams')
     df = pd.read_csv('https://raw.githubusercontent.com/duducury/spotify-data/main/top5_artists_by_streams.csv')
 
     # Create selectors for country and year
@@ -24,6 +24,6 @@ def show_page():
     # Plot the bar graph
     fig, ax = plt.subplots()
     ax.bar([selected_country1, selected_country2], [total_streams_country1, total_streams_country2])
-    ax.set_ylabel('Total Streams')
+    ax.set_ylabel('Total Streams(Trillion)')
     ax.set_title(f'Total Streams Comparison for {selected_year}')
     st.pyplot(fig)
