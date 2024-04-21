@@ -5,7 +5,8 @@ import pandas as pd
 import top_streams_artist
 import global_trends
 import revenue_analysis
-import streams_by_country  # Import the new module
+import streams_by_country
+import revcomp# Import the new module
 
 
 # Define the function for the Home Page
@@ -34,7 +35,8 @@ pages = {
     "Top 5 Streamed Artist": top_streams_artist.show_top_artists,
     "Global Trends": global_trends.show_page,
     "Revenue Analysis": revenue_analysis.show_page,
-    "Streams by Country": streams_by_country.show_page,  # Add the new page
+    "Streams by Country": streams_by_country.show_page,
+    "Revenue Comparsion":revcomp.show_page,# Add the new page
 }
 
 # Navigation menu
