@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 def show_page():
 
-    st.title('Compare Spotify to its Streaming Competitors')
+    st.title('Compare Spotify Royalities to its Streaming Competitors')
     df = pd.read_csv('https://raw.githubusercontent.com/duducury/spotify-data/main/top5_artists_by_streams.csv')
     df['Spotify'] = (df['streams'] / 100000) * 400
     df['Apple Music'] = (df['streams'] / 100000) * 800
