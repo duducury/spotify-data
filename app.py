@@ -36,7 +36,7 @@ pages = {
     "Global Trends": global_trends.show_page,
     "Revenue Analysis": revenue_analysis.show_page,
     "Streams by Country": streams_by_country.show_page,
-    "Revenue Comparsion":revcomp.show_page,# Add the new page
+    "Royalities Comparsion":revcomp.show_page,# Add the new page
 }
 
 # Navigation menu
