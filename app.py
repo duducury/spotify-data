@@ -1,38 +1,36 @@
+# app.py
+
 import streamlit as st
 import pandas as pd
-
-# Import modules for different pages
 import top_streams_artist
 import global_trends
 import revenue_analysis
+import streams_by_country  # Import the new module
 
 
-
-#Paga content
-def home_page(): 
+# Define the function for the Home Page
+def home_page():
     st.title('Welcome to the Spotify Data Analysis Dashboard!')
     df = pd.read_csv('https://raw.githubusercontent.com/duducury/spotify-data/main/top5_artists_by_streams.csv')
-    
-    # raw data Checkbox
+
+    # Display raw data if checkbox is selected
     if st.checkbox('Show raw data'):
         st.subheader('Raw data')
         st.write(df)
 
 
-# Nav Menu / mapping each paga to their functions
+# Update the pages dictionary to include the new page
 pages = {
-    "Home": home_page,  
+    "Home": home_page,
     "Top 5 Streamed Artist": top_streams_artist.show_top_artists,
     "Global Trends": global_trends.show_page,
     "Revenue Analysis": revenue_analysis.show_page,
+    "Streams by Country": streams_by_country.show_page,  # Add the new page
 }
 
-# Navigation
+# Navigation menu
 st.sidebar.title('Navigation')
-# default  "Home" 
-default_page_index = list(pages.keys()).index("Home") 
-
-# Use the default_page_index to set the default for the radio button
+default_page_index = list(pages.keys()).index("Home")
 option = st.sidebar.radio('Go to', list(pages.keys()), index=default_page_index)
 
 # Call the function associated with the chosen option
