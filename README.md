@@ -1,4 +1,4 @@
-view Project:  https://spotify-data-kvhuzqfnutbxuebn4jsdac.streamlit.app/
+View Project:  https://spotify-data-kvhuzqfnutbxuebn4jsdac.streamlit.app/
 
 # pip install folium
 # pip install streamlit-folium
