@@ -7,7 +7,7 @@ import global_trends
 import revenue_analysis
 import streams_by_country
 import revcomp# Import the new module
-import StremingPlatforms
+import stremingPlatforms
 
 # Define the function for the Home Page
 def home_page():
@@ -37,7 +37,7 @@ pages = {
     "Revenue Analysis": revenue_analysis.show_page,
     "Streams by Country": streams_by_country.show_page,
     "Royalities Comparsion":revcomp.show_page,# Add the new page
-    "streaming platforms":StremingPlatforms.show_page,# Add the new page
+    "streaming platforms":stremingPlatforms.show_page,# Add the new page
 }
 
 # Navigation menu
