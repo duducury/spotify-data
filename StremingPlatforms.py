@@ -118,7 +118,7 @@ def show_page():
 
 
     st.markdown('---')
-    st.title('What contributes to spotify to Spotify sucess?')
+    st.title('What contributes to Spotify success?')
     st.markdown('''
    
     ''')
