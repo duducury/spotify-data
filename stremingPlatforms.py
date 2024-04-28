@@ -155,6 +155,7 @@ def show_page():
 
 
     st.markdown('---')
+    st.title('Conclusion: The Future of Music Consumption')
     st.markdown('''
         In conclusion, The Music Consumption market was changed drastically from physical CDs all way to streaming services.
         As we look to the future, streaming services will likely continue to innovate 
