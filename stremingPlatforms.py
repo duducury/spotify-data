@@ -10,29 +10,49 @@ def show_page():
         subscribers and compare the major players in this new era of streaming.
     ''')
 
+
+   #  Music Consumption 
     st.markdown('---')
-
-
-    # Global Music Consumption 
-    st.title('Global Music Consumption ')
+    st.title(' Music Consumption Comparison (2010 - 2019) ')
     st.markdown('''
-        Let's take a look at the 2022 different music consumption.
-    ''')\
-    # CSV dataset
-    url_global_music = 'https://raw.githubusercontent.com/duducury/spotify-data/main/GlobalMusicConsumption.csv'
-    df_global_music = pd.read_csv(url_global_music)
+        The way we listen to music has changed!
+        Let's take a look at the music consumption difference between 2010 and 2019.
+    ''')
 
-    # Convert the 'SHARE' column to a numeric type after removing the '%' sign
-    df_global_music['SHARE'] = df_global_music['SHARE'].str.replace('%', '').astype(float)
+# Data for comparison between 2010 and 2019
+# reference: https://www.clickondetroit.com/news/local/2019/12/31/heres-how-the-way-we-listen-to-music-has-changed-since-the-start-of-the-decade/
+    data = {
+        'Year': [2010, 2019],
+        'Physical (CDs)': [52, 9],
+        'Digital Downloads': [38, 9],
+        'Syncing (TV)': [3, 2],
+        'Streaming Services': [7, 80]
+    }
+    df_music_consumption = pd.DataFrame(data)
+    df_music_consumption_melted = df_music_consumption.melt(id_vars='Year', 
+                                                            var_name='Method', 
+                                                            value_name='Percentage')
 
-    # horizontal bar plot for global music consumption
-    fig_global_music = px.bar(df_global_music, x='SHARE', y='SERVICE', orientation='h',
-                            labels={'SHARE': 'Share in (%)', 
-                                    'SERVICE': 'Service'},
-                            text='SHARE')  
-    # sort the bars 
-    fig_global_music.update_layout(yaxis={'categoryorder': 'total ascending'})
-    st.plotly_chart(fig_global_music)
+# Year dropdown
+    year_choice = st.selectbox('Select a Year to Compare:', df_music_consumption['Year'].unique())
+
+# Filter data by year
+    data_pie = df_music_consumption_melted[df_music_consumption_melted['Year'] == year_choice]
+    fig_pie = px.pie(data_pie, values='Percentage', names='Method',
+                    title=f'Music Consumption in {year_choice}',
+                    color='Method', 
+                    hover_data=['Percentage'],  
+                    labels={'Method':'Method: '} 
+                    )
+    # Update the pie template
+    fig_pie.update_traces(
+        hoverinfo='label+percent',
+        hovertemplate='<b>%{label}</b><br>Percentage: %{percent}',
+        textposition='outside', textinfo='percent+label'
+    )
+    st.plotly_chart(fig_pie)
+
+
 
 
     # Subscriber Growth Over the Years
@@ -119,14 +139,29 @@ def show_page():
 
     st.markdown('---')
     st.title('What contributes to Spotify success?')
-    st.markdown('''
-   
-    ''')
+    st.markdown("""
+    - **Pioneering**: One of the first companies to enter into the music streaming market.
+    - **User Experience (UX)**: Spotify offers a clean, intuitive, and user-friendly interface.
+    - **Freemium Model**: Allows free access with the option to upgrade for additional benefits.
+    - **Strategic Partnerships**: With record labels, artists, and telecom companies.
+    - **Extensive Music Library**: Provides access to a vast library of songs and podcasts.
+    - **Offline Downloading**: Enables users to download music and listen without an internet connection.
+    - **Global Presence**: Available in numerous countries, catering to a global market.
+    - **Personalization**: Delivers personalized playlists and recommendations.
+    - **Platform Integration**: Service integration with various devices and platforms.
+    - **Continuous Innovation**: Regular updates with new features and improvements.
+""")
 
 
 
     st.markdown('---')
-    st.title('Conclusion: The Future of Music is Streaming')
+    st.markdown('''
+        In conclusion, The Music Consumption market was changed drastically from physical CDs all way to streaming services.
+        As we look to the future, streaming services will likely continue to innovate 
+        and evolve, with new features, business models, AI Integration, and partnerships reshaping even further. 
+        One thing is clear: streaming has changed the music industry forever, and spotify has been of the greatest contributors for this transformation.
+    ''')
+
 
 if __name__ == "__main__":
     show_page()
