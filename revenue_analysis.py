@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import plotly.express as px
 def show_page():
+    Streaming_rev = pd.read_csv("https://raw.githubusercontent.com/duducury/spotify-data/main/Music_Streaming_Revenue.csv")
     R_dict = {
         'Premium Services' : 88,
         'Ad-Supported Services' : 12
@@ -80,7 +81,11 @@ def show_page():
     
     st.set_option('deprecation.showPyplotGlobalUse', False)
     st.subheader('Music Streaming Industry')
-    st.plotly_chart(fig3)
+    fig5 = px.bar(Streaming_rev, x='Year', y='Revenue')
+    fig5.update_yaxes(title='Revenue in Billions')
+    st.plotly_chart(fig5)
+    
+
     st.write(""" The Music streaming makes up 84% of music industry revenue with the streaming industry experience year after year growth with just last year being 10%.
               According to analysis the music streaming global revenue is sitting at 17.5 billion dollars and paid streaming makes up 23% of it. Nearly 4/5 people currently use a 
              streaming service such as spotify to listen to music now and only growing. With over 600 million people actively paying a subscription the market is only to grow and spotify is sure to keep its place is large and growing market """)
