@@ -27,3 +27,9 @@ def show_page():
     ax.set_ylabel('Total Streams(Trillion)')
     ax.set_title(f'Total Streams Comparison for {selected_year}')
     st.pyplot(fig)
+
+
+    st.write("The comparison of streaming numbers between countries reveals that more developed countries tend to have higher total stream numbers. This correlation can be attributed to various factors associated with development, such as access to high-speed internet, disposable income, and technological infrastructure.")
+    st.write("In more developed countries, individuals are more likely to have access to streaming platforms and are often early adopters of new technologies. Additionally, higher disposable incomes enable people to subscribe to streaming services and access a wider range of content.")
+    st.write("Furthermore, developed countries often have better internet infrastructure and connectivity, which facilitates smoother streaming experiences and encourages more frequent usage of streaming platforms.")
+    st.write("While this correlation between development and streaming numbers is evident, it's important to note that cultural factors, government regulations, and the availability of local content can also influence streaming habits within each country.")

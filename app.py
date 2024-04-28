@@ -8,6 +8,8 @@ import revenue_analysis
 import streams_by_country
 import revcomp# Import the new module
 import stremingPlatforms
+import how_covid_impacts_streaming
+
 
 # Define the function for the Home Page
 def home_page():
@@ -38,6 +40,7 @@ pages = {
     "Streams by Country": streams_by_country.show_page,
     "Royalities Comparsion":revcomp.show_page,# Add the new page
     "streaming platforms":stremingPlatforms.show_page,# Add the new page
+    "How Covid Impacted Streaming": how_covid_impacts_streaming.show_page,
 }
 
 # Navigation menu
