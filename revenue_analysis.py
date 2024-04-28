@@ -49,3 +49,5 @@ def show_page():
 
     st.write(""" """)
     st.set_option('deprecation.showPyplotGlobalUse', False)
+if __name__ == "__main__":
+    show_page()
