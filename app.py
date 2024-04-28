@@ -16,19 +16,27 @@ def home_page():
     st.title('Welcome to the Spotify Data Analysis Dashboard!')
     st.markdown('---') 
  # Introduction text
-    st.markdown("""
-        Our main motivation for this project is to analyze data from one of the leading streaming music platforms: Spotify. 
-        We aim to uncover insights into artist earnings, track the popular artists across different regions, and explore how these dynamics influence music trends and preferences worldwide.
-    """)
+
+    st.markdown("""                
+This interactive platform is designed to analyze data from one of the leading streaming music platforms: Spotify. 
+Our dashboard offers a comprehensive analysis of data including:
+
+- **Top 5 Streamed Artists**: Discover the most popular artists on Spotify, From Global to Region .
+
+- **Global Trends**: Explore a beutiful Choropleth Map.
+
+- **Revenue Analysis**: Gain insights into how revenues are generated and distributed among artists and stakeholders within the Spotify ecosystem.
+
+- **Compera Streams by Country**: Compare two regions according to the number of streamers per year.
+
+- **Royalties Comparison**: Compare the royalties generated across different platforms and what this means for artists.
+
+- **The Progress of Music**: Track the evolution of music consumption from physical mediums to digital streaming.
+
+- **How COVID Impacted Streaming**: Discover the impact of the COVID-19 pandemic on music streaming trends and artist popularity.
     
+    """)
 
-
-    df = pd.read_csv('https://raw.githubusercontent.com/duducury/spotify-data/main/top5_artists_by_streams.csv')
-
-    # Display raw data if checkbox is selected
-    if st.checkbox('Show raw data'):
-        st.subheader('Raw data')
-        st.write(df)
 
 
 # Update the pages dictionary to include the new page
