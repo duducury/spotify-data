@@ -4,7 +4,7 @@ import plotly.express as px
 
 # intro
 def show_page():
-    st.title('The Progress of Music Streaming Services (2015-2022)')
+    st.title('The Progress of Music Streaming Services')
     st.markdown('''
         Here, we'll analyze the impressive growth of streaming 
         subscribers and compare the major players in this new era of streaming.
