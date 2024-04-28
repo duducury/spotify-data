@@ -58,7 +58,7 @@ def show_page():
     # Subscriber Growth Over the Years
     st.markdown('---')
     st.markdown('''
-        ## Subscriber Growth Over the Years
+        ## Music Streaming subscriber Growth Over the Years
         As we can see from the bar chart below, the number of music streaming services subscribers
         over the last seven yeas has grown wilsly, being able to change the way we listen to music.
     ''')
@@ -67,7 +67,7 @@ def show_page():
     df_total_subs['Year'] = pd.to_datetime(df_total_subs['Year'], format='%Y')
 
     #  display the bar plot 
-    fig_total_subs = px.bar(df_total_subs, x='Year', y='Total Streaming Subscribers', title='Streaming subscribers',
+    fig_total_subs = px.bar(df_total_subs, x='Year', y='Total Streaming Subscribers', title='Number of Music Streaming subscribers',
                             labels={'Total Streaming Subscribers': 'Total Subscribers',
                                      'Year': 'Year'})
     st.plotly_chart(fig_total_subs)
