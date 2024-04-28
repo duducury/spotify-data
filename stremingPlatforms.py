@@ -58,7 +58,7 @@ def show_page():
     # Subscriber Growth Over the Years
     st.markdown('---')
     st.markdown('''
-        ## Music Streaming subscriber Growth Over the Years
+        ## Music Streaming Subscriber Growth Over the Years
         As we can see from the bar chart below, the number of music streaming services subscribers
         over the last seven yeas has grown wilsly, being able to change the way we listen to music.
     ''')
