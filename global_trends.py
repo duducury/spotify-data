@@ -38,6 +38,7 @@ def show_page():
         st.write(f"Number of Streams: {selected_streams}")
     else:
         st.write("No data available for the selected region and year.")
+    st.markdown('---')
     st.subheader('Highest and Lowest Number of Streams for Each Year')
     def streaming_revenue():
         df_grouped = df.groupby('year')['streams'].agg(['max', 'min']).reset_index()
