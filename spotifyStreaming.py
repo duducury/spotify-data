@@ -64,7 +64,7 @@ def show_page():
     # Plot the bar graph
     fig, ax = plt.subplots()
     ax.bar([selected_country1, selected_country2], [total_streams_country1, total_streams_country2])
-    ax.set_ylabel('Total Streams (Trillions)')
+    ax.set_ylabel('Total Streams (Billions)')
     ax.set_title(f'Total Streams Comparison for {selected_year}')
     st.pyplot(fig)
 
