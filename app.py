@@ -2,10 +2,7 @@
 
 import streamlit as st
 import pandas as pd
-# import top_streams_artist
-# import global_trends
 import revenue_analysis
-# import streams_by_country
 import revcomp# Import the new module
 import stremingPlatforms
 import how_covid_impacts_streaming
@@ -25,20 +22,17 @@ def home_page():
 This interactive platform is designed to analyze data from one of the leading streaming music platforms: Spotify. 
 Our dashboard offers a comprehensive analysis of data including:
 
-- **Top 5 Streamed Artists**: Discover the most popular artists on Spotify, From Global to Region .
+- **The Progress of Music**: Track the evolution of music consumption from physical mediums to digital streaming.
 
-- **Global Trends**: Explore a beutiful Choropleth Map.
+- **Spotify Streaming Insights**: Discover music streaming trends, artist popularity, and global streaming dynamics.
 
-- **Revenue Analysis**: Gain insights into how revenues are generated and distributed among artists and stakeholders within the Spotify ecosystem.
-
-- **Compare Streams by Country**: Compare two regions according to the number of streamers per year.
+- **How COVID Impacted Streaming**: Discover the impact of the COVID-19 pandemic on music streaming trends and artist popularity.
 
 - **Royalties Comparison**: Compare the royalties generated across different platforms and what this means for artists.
 
-- **The Progress of Music**: Track the evolution of music consumption from physical mediums to digital streaming.
+- **Revenue Analysis**: Gain insights into how revenues are generated and distributed among artists and stakeholders within the Spotify ecosystem.
 
-- **How COVID Impacted Streaming**: Discover the impact of the COVID-19 pandemic on music streaming trends and artist popularity.
-    
+
     """)
 
 
@@ -48,9 +42,6 @@ pages = {
     "Home": home_page,
     "The Progress of Music":stremingPlatforms.show_page,# Add the new page 
     "Spotify Streaming Insights":spotifyStreaming.show_page,
-    # "Top 5 Streamed Artist": top_streams_artist.show_top_artists,
-    # "Global Trends": global_trends.show_page,
-    # "Streams by Country": streams_by_country.show_page, 
     "How Covid Impacted Streaming": how_covid_impacts_streaming.show_page,
     "Royalities Comparsion":revcomp.show_page,# Add the new page 
     "Revenue Analysis": revenue_analysis.show_page,
