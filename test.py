@@ -80,20 +80,27 @@ def show_page():
 # 
 # Choropleth map section
     st.markdown('---')
-
-    
     st.title('Choropleth Map of Spotify Streams by Region and Year')
     year_map = st.selectbox('Select Year for Map', df['year'].unique(), key='year_map')
     fig = choropleth_map(df, year_map)
     st.plotly_chart(fig)
 
-    # Revenue trends section
+    # Select Region for Detailed Data
+    selected_region = st.selectbox('Select a region to display the number of streams', df['region'].unique(), key='region_detail')
+    selected_data = df[(df['year'] == year_map) & (df['region'] == selected_region)]
+    aggregated_data = selected_data.groupby('region', as_index=False).agg({'streams': 'sum'})
+    if not selected_data.empty:
+        selected_streams = aggregated_data['streams'].values[0]
+        st.write(f"Region: {selected_region}")
+        st.write(f"Number of Streams: {selected_streams}")
+    else:
+        st.write("No data available for the selected region and year.")
+
+    # Revenue trends
     st.markdown('---')
     st.subheader('Highest and Lowest Number of Streams for Each Year')
     figure2 = streaming_revenue(df)
     st.plotly_chart(figure2)
-
-
 
 def choropleth_map(df, year):
     filtered_df = df[df['year'] == year]
