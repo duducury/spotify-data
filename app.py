@@ -2,10 +2,10 @@
 
 import streamlit as st
 import pandas as pd
-import top_streams_artist
-import global_trends
+# import top_streams_artist
+# import global_trends
 import revenue_analysis
-import streams_by_country
+# import streams_by_country
 import revcomp# Import the new module
 import stremingPlatforms
 import how_covid_impacts_streaming
@@ -46,14 +46,15 @@ Our dashboard offers a comprehensive analysis of data including:
 # Update the pages dictionary to include the new page
 pages = {
     "Home": home_page,
-    "The Progress of Music":stremingPlatforms.show_page,# Add the new page
-    "Top 5 Streamed Artist": top_streams_artist.show_top_artists,
-    "Global Trends": global_trends.show_page,
-    "Streams by Country": streams_by_country.show_page, 
+    "The Progress of Music":stremingPlatforms.show_page,# Add the new page 
+    "Spotify Streaming Insights":spotifyStreaming.show_page,
+    # "Top 5 Streamed Artist": top_streams_artist.show_top_artists,
+    # "Global Trends": global_trends.show_page,
+    # "Streams by Country": streams_by_country.show_page, 
     "How Covid Impacted Streaming": how_covid_impacts_streaming.show_page,
     "Royalities Comparsion":revcomp.show_page,# Add the new page 
     "Revenue Analysis": revenue_analysis.show_page,
-    "Spotify Streaming Insights":spotifyStreaming.py.show_page,
+   
  }   
    
 
