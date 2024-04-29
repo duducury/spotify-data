@@ -9,7 +9,7 @@ import streams_by_country
 import revcomp# Import the new module
 import stremingPlatforms
 import how_covid_impacts_streaming
-import test
+import spotifyStreaming
 
 # Define the function for the Home Page
 def home_page():
@@ -53,7 +53,7 @@ pages = {
     "How Covid Impacted Streaming": how_covid_impacts_streaming.show_page,
     "Royalities Comparsion":revcomp.show_page,# Add the new page 
     "Revenue Analysis": revenue_analysis.show_page,
-    "test":test.show_page,
+    "Spotify Streaming Insights":spotifyStreaming.py.show_page,
  }   
    
 
