@@ -56,5 +56,8 @@ Caution: Will have an error for some selections due to missing data""")
 - YouTube Music: \$0.001-\$0.003 per stream. Artists can expect \$100 to \$300 for every 100,000 streams.
 - Amazon Music: \$0.004-\$0.007 per stream. Artists can expect \$400 to \$700 for every 100,000 streams.
 - Deezer: \$0.005-\$0.007 per stream. Artists can expect \$500 to \$700 for every 100,000 streams.""")
+    st.markdown("""When it comes to streaming platforms Spotify is no where near the top when it comes to paying its artist top dollar as seen. Tidal as seen pays the most
+                in the platforms metioned above with the platform having a similar size catalog of songs aswell with  some artist even perfer having their music for months on Tidal 
+                before having it uploaded to spotify. However due to the major usage and popularlity of Spotify, artist tend to chose them as one of their main platforms of usage.""")
 if __name__ == "__main__":
     show_page()
