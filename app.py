@@ -31,7 +31,7 @@ Our dashboard offers a comprehensive analysis of data including:
 
 - **Revenue Analysis**: Gain insights into how revenues are generated and distributed among artists and stakeholders within the Spotify ecosystem.
 
-- **Compera Streams by Country**: Compare two regions according to the number of streamers per year.
+- **Compare Streams by Country**: Compare two regions according to the number of streamers per year.
 
 - **Royalties Comparison**: Compare the royalties generated across different platforms and what this means for artists.
 
