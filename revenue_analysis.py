@@ -58,12 +58,14 @@ def show_page():
              The Company went public in 2018 with its initial stock shares being traded for \$165.90 a share thus requiring Spotify to disclose all financial information.
              Spotify offers its services globally with Spotify being available in 184 countries and territories and has roughly around 602 million monthly active users
               and 236 million Premium Subscribers as of December 31, 2023. It was also reported that in the year 2023 that Spotify made $4.05 billion US dollars""")
+    st.markdown('---')
     st.subheader('Spotify Revenue Based on 2021')
     st.plotly_chart(fig1)
     st.subheader('Spotify Gross Profit Based on 2021')
     st.plotly_chart(fig2)
     st.write("""Spotify Despite its pure massive amounts of streams and possible ad revenue from said streams, majority of the money made from its platform is generated from its premium monthly or yearly subscriptions.
               Premium Subscribers of spotify are able to enjoy unlimited online and offline access to their entire catalog of music and podcasts without having to listen to any commercials.""")
+    st.markdown('---')
     st.subheader('Spotify Subscription Cost:')
     st.markdown("""
 - Premium Individual: \$10.99 per month.
@@ -80,6 +82,7 @@ def show_page():
               record labels, and collecting societies, then pay the artists and songwriters based on their agreed terms. These terms to can vary drastically mostly depending on well the artist tends to perform""")
     
     st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.markdown('---')
     st.subheader('Music Streaming Industry')
     fig5 = px.bar(Streaming_rev, x='Year', y='Revenue')
     fig5.update_yaxes(title='Revenue in Billions')
