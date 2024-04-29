@@ -18,7 +18,8 @@ def show_page():
         fig.update_layout(geo=dict(showframe=False, showcoastlines=True))
         return fig
 
-    st.title('Choropleth Map of Spotify Streams by Region')
+    st.title('Global trends')
+    st.subheader('Choropleth Map of Spotify Streams by Region and Year')
 
 
     year = st.selectbox('Select Year', df['year'].unique())
@@ -37,6 +38,23 @@ def show_page():
         st.write(f"Number of Streams: {selected_streams}")
     else:
         st.write("No data available for the selected region and year.")
+    st.subheader('Highest and Lowest Number of Streams for Each Year')
+    def streaming_revenue():
+        df_grouped = df.groupby('year')['streams'].agg(['max', 'min']).reset_index()
+        df_grouped = df_grouped.rename(columns={'max': 'Highest Stream', 'min': 'Lowest Stream'})
+
+        figure2 = px.bar(df_grouped, x='year', y=['Highest Stream', 'Lowest Stream'], barmode='group', title='High and Low Number of Streams for Each Year')
+
+        figure2.update_layout(
+            xaxis_title='Year',
+            yaxis_title='Streams',
+            legend_title='Revenue'
+        )
+
+        return figure2
+
+    figure2 = streaming_revenue()
+    st.plotly_chart(figure2)
 
 if __name__ == "__main__":
     show_page()
