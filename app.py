@@ -14,12 +14,13 @@ import how_covid_impacts_streaming
 # Define the function for the Home Page
 def home_page():
     st.title('Welcome to the Spotify Data Analysis Dashboard!')
-    st.markdown('---') 
+   
     # spotify logo 
     col1, col2, col3 = st.columns([1,2,1])
     with col2:
         st.image('https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/168px-Spotify_logo_without_text.svg.png?20160123212544', width=200)
- # Introduction text
+ # Introduction text 
+    st.markdown('---') 
     st.markdown("""                
 This interactive platform is designed to analyze data from one of the leading streaming music platforms: Spotify. 
 Our dashboard offers a comprehensive analysis of data including:
